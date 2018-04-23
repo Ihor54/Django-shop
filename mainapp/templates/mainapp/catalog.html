@@ -1,0 +1,19 @@
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="content">
+    <h4>Home >> <span>Catalog</span></h4>
+    <div class="offer">
+
+        {% for product in products %}
+            <div>
+                <a href="{{ product.href }}"><img src="{{ product.src }}" alt=""></a>
+                <span><a href="">{{ product.name|upper }}</a></span>
+                <span>{{ product.price }}</span>
+            </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="content">
+    <h4>Home >> <span>Contact us</span></h4>
+    <div class="contact_form">
+        <form action="">
+            <h3>FULL NAME*</h3>
+            <input type="text" placeholder="e.g. robert smith">
+            <h3>EMAIL*</h3>
+            <input type="email" placeholder="e.g. name@home.com">
+            <h3>COMPANY</h3>
+            <input type="text" placeholder="e.g. your company (optional)">
+            <h3>SUBJECT</h3>
+            <input type="text" placeholder="e.g. info">
+            <h3>MESSAGE</h3>
+            <textarea name="" id="" cols="40" rows="10"></textarea>
+        </form>
+        <div class="address">
+            <h3>Address</h3>
+            <div class="pict_p">
+                <img src="{% static 'img/contact/map_icon.png' %}" alt="">
+                <p> Ut interdum tristique est com modo pharetra.</p>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque aperiam voluptates mollitia
+                aliquam perferendis quasi illum, dolorem velit repudiandae quam.</p>
+            <div class="pict_p">
+                <img src="{% static 'img/contact/phone_icon.png' %}" alt="">
+                <p>1-900-324-9876</p>
+            </div>
+            <div class="pict_p">
+                <img src="{% static 'img/contact/mail_icon.png' %}" alt="">
+                <p>info@surfhouse.com</p>
+            </div>
+            <p>If you have questions about your order or need any general information our customer service team
+                will be happy to assist you.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

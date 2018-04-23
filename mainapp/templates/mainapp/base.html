@@ -1,0 +1,166 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="header_index">
+            <div class="logo">
+                <img src="{% static 'img/index/logo.png' %}" alt="Logo" title="logo">
+                {% block header-social %}
+                    {% include 'mainapp/includes/inc_header-social.html' %}
+                {% endblock %}
+            </div>
+            {% block welcome--index %}
+
+            {% endblock %}
+        </div>
+    <!--</div>-->
+    <div class="main">
+        <div class="aside">
+            {% block menu %}
+                {% include 'mainapp/includes/inc_menu.html' %}
+            {% endblock %}
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="brand_index">
+            <img src="{% static 'img/index/brands/dji.png' %}" alt="">
+            <img src="{% static 'img/index/brands/flyers.png' %}" alt="">
+            <img src="{% static 'img/index/brands/parrot.png' %}" alt="">
+            <img src="{% static 'img/index/brands/hovercast.png' %}" alt="">
+            <img src="{% static 'img/index/brands/syma.png' %}" alt="">
+            <img src="{% static 'img/index/brands/qdcam.png' %}" alt="">
+        </div>
+
+        <div class="instagram">
+            <div class="pict">
+                <img src="img/index/inst.png" alt="">
+                <p>Instagram feed: <a href="">#quadrofly</a></p>
+            </div>
+            <div class="photo">
+                <img src="{% static 'img/index/instagram/1.jpg' %}" alt="">
+                <img src="{% static 'img/index/instagram/2.jpg' %}" alt="">
+                <img src="{% static 'img/index/instagram/3.jpg' %}" alt="">
+                <img src="{% static 'img/index/instagram/4.jpg' %}" alt="">
+                <img src="{% static 'img/index/instagram/5.jpg' %}" alt="">
+                <img src="{% static 'img/index/instagram/6.jpg' %}" alt="">
+            </div>
+        </div>
+
+        <div class="socio">
+            <a href="">
+                <div class="fb">
+                    <img src="{% static 'img/index/socio/fb.png' %}" alt="">
+                </div>
+            </a>
+            <a href="">
+                <div class="tw">
+                    <img src="{% static 'img/index/socio/tw.png' %}" alt="">
+                </div>
+            </a>
+            <a href="">
+                <div class="pin">
+                    <img src="{% static 'img/index/socio/pin.png' %}" alt="">
+                </div>
+            </a>
+        </div>
+    </div>
+    {% block footer %}
+    <div class="footer">
+        <div class="up_footer">
+            <div>
+                <h3>Category</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>about us</li>
+                    <li>eshop</li>
+                    <li>Features</li>
+                    <li>new collections</li>
+                    <li>blog</li>
+                    <li>contact</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Our Account</h3>
+                <ul>
+                    <li>Your Account</li>
+                    <li>Personal information</li>
+                    <li>Addresses</li>
+                    <li>Discount</li>
+                    <li>Orders history</li>
+                    <li>Addresses</li>
+                    <li>Search Terms</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Our Support</h3>
+                <ul>
+                    <li>Site Map</li>
+                    <li>Search Terms</li>
+                    <li>Advanced Search</li>
+                    <li>Mobile</li>
+                    <li>Contact Us</li>
+                    <li>Mobile</li>
+                    <li>Addresses></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Newsletter</h3>
+                <p>Join thousands of other people subscribe to our news</p>
+                <form action="">
+                    <input type="text" placeholder="INSERT EMAIL">
+                    <input type="submit" value="SUBMIT">
+                </form>
+                <div>
+                    <img src="{% static 'img/index/footer/aex.png' %}" alt="">
+                    <img src="{% static 'img/index/footer/mastercard.png' %}" alt="">
+                    <img src="{% static 'img/index/footer/maestro.png' %}" alt="">
+                    <img src="{% static 'img/index/footer/paypal.png' %}" alt="">
+                    <img src="{% static 'img/index/footer/discover.png' %}" alt="">
+                    <img src="{% static 'img/index/footer/visa.png' %}" alt="">
+                </div>
+            </div>
+            <div>
+                <h3>About us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nobis quidem, atque. Nam
+                    laboriosam
+                    labore, corporis necessitatibus a, debitis. Eum nostrum, dignissimos quisquam quae molestias
+                    explicabo quia quas sint voluptatum?</p>
+                <h4>Phone: <span>1-999-342-9876</span></h4>
+                <h4>e-mail: <span>info@surfhouse.com</span></h4>
+            </div>
+        </div>
+        <div class="down_footer">
+            <p>&copy; 2017 QUADROFLY. All rights reserved - Designed by ID|54</p>
+            <div class="footer_social">
+                <a href=""> <!-- <img src="img/index/footer/fb.png" alt=""> --> </a>
+                <a href=""> <!-- <img src="img/index/footer/tw.png" alt=""> --> </a>
+                <a href=""> <!-- <img src="img/index/footer/pin.png" alt=""> --> </a>
+                <a href=""> <!-- <img src="img/index/footer/gplus.png" alt=""> --> </a>
+                <a href=""> <!-- <img src="img/index/footer/inst.png" alt=""> --> </a>
+                <a href=""> <!-- <img src="img/index/footer/tumblr.png" alt=""> --> </a>
+                <a href=""> <!-- <img src="img/index/footer/rss.png" alt=""> --> </a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</div>
+</body>
+</html>

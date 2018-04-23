@@ -1,0 +1,55 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+
+    {% block welcome--index %}
+    <div class="welcome_index">
+        <div class="greet">
+            <h3>WELCOME TO QUADROFLY</h3>
+            <p>The only online store you will ever need for all your quadrocopter's needs</p>
+        </div>
+        <div class="tender">
+            <h3>Quadcopter Workshop</h3>
+            <p>Workshop Schedule:-Sunday, 30th April’17
+            </p>
+            <p>Workshop Timing:- Starts at 10:30 AM.</p>
+            <a href="#">DETAILS</a>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+    <div class="content">
+        <div class="new">
+            <h3>NEW PRODUCTS</h3>
+            <!-- <div class="products_new"> -->
+            {% for product in new_products %}
+            <div>
+                <a href="{{ product.href }}"><img src="{{ product.src }}" alt=""></a>
+                <span><a href="">{{ product.name|upper }}</a></span>
+                <span>{{ product.price }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="sale">
+            <h3>TOP PRODUCTS</h3>
+            {% for product in top_products %}
+            <div>
+                <a href="{{ product.href }}"><img src="{{ product.src }}" alt=""></a>
+                <span><a href="">{{ product.name|upper }}</a></span>
+                <span>{{ product.price }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="sale">
+            <h3>SALE PRODUCTS</h3>
+            {% for product in sale_products %}
+            <div>
+                <a href="{{ product.href }}"><img src="{{ product.src }}" alt=""></a>
+                <span><a href="">{{ product.name|upper }}</a></span>
+                <span>{{ product.price }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
