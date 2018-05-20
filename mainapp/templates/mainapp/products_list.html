@@ -1,0 +1,21 @@
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="content">
+    <h4>Home >> Catalog >> Category >> <span> {{ category.name|title }} </span></h4>
+    <div class="offer">
+        {% for product in products %}
+        <div>
+            <a href="{% url 'products:product' product.pk %}">
+                <img src="/media/{{ product.image }}" alt="">
+            </a>
+            <span><a href="">{{ product.name|upper }}</a></span>
+            <span>$.{{ product.price }}</span>
+            <a href="{% url 'basket:add' product.pk %}" class="button-order">Order</a>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

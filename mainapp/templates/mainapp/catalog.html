@@ -8,12 +8,17 @@
     <div class="offer">
 
         {% for product in products %}
-            <div>
-                <a href="{{ product.href }}"><img src="{{ product.src }}" alt=""></a>
-                <span><a href="">{{ product.name|upper }}</a></span>
-                <span>{{ product.price }}</span>
-            </div>
-            {% endfor %}
+        <div>
+            <a href="{% url 'products:product' product.pk %}">
+                <img src="/media/{{ product.image }}" alt="">
+            </a>
+            <span><a href="">{{ product.name|upper }}</a></span>
+            <span>$.{{ product.price }}</span>
+            <!--<span> {{ product.category.name}}</span>-->
+            <a href="{% url 'basket:add' product.pk %}" class="button-order">Order</a>
+        </div>
+
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

@@ -5,12 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        {% block title %}
+        {% block title|title %}
         {% endblock %}
     </title>
     {% block css %}
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!--<link rel="stylesheet" href="style_for_basket.css">-->
     {% endblock %}
 
     {% block js %}

@@ -1,0 +1,37 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class="content">
+    <h4>Home >> Catalog >><span>DJI Mavic Pro</span></h4>
+    <div class="product">
+        <div class="product_head">
+            <div class="product_image">
+                <img src="/media/{{ product.image }}" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+            <div class="product_descr">
+                <h3>{{ product.name }}</h3>
+                <h3>${{ product.price }}</h3>
+                <hr>
+                <h4>Краткое описание товара</h4>
+                <p> DJI Mavic Pro является небольшим, но мощным беспилотником, который превращает небо в свой творческий
+                    холст легко и непринужденно, помогая вам сделать каждый момент прекрасным. Его компактный размер
+                    скрывает высокую степень сложности механизмов, что делает его одним из самых продуманных летающих
+                    камер DJI, когда-либо: 24 высокопроизводительных вычислительных ядер, лучшие системы передачи
+                    сигнала с 7 км диапазоном, 5 датчиков позиционирования и камера 4K, стабилизированная 3-х осевым
+                    механическим стабилизатором, с помощью всего лишь одного нажатия пальца.</p>
+                <hr>
+                <a href="{% url 'basket:add' product.pk %}">ORDER</a>
+            </div>
+        </div>
+        <div class="description">
+            {{ product.description }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

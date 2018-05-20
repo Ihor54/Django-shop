@@ -1,0 +1,15 @@
+
+.search {
+	display: block;
+	/*width: 23px;*/
+	height: 23px;
+	line-height: 66px;
+	background-image: url(/static/img/search.png);
+}
+.basket {
+	display: block;
+	width: 23px;
+	background-image: url(/static/img/basket.png);
+    text-decoration: none;
+    color: #555;
+}
